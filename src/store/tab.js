@@ -22,6 +22,9 @@ export default {
                         state.tabsList.push(value)
                     }
             }
+        },
+        closeTab(state,index) {
+            state.tabsList.splice(index,1)
         }
     }
 }

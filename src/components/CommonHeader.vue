@@ -1,7 +1,7 @@
 <template>
     <div class="header-container">
         <div class="l-content">
-            <el-button @click="handleMenu" icon="el-icon-menu" size="mini"></el-button>
+            <el-button style="margin-right: 20px;" @click="handleMenu" icon="el-icon-menu" size="mini"></el-button>
             <!-- 面包屑 -->
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item v-for="item in tags" :key="item.name" :to="{ path: `${item.path}` }">{{item.label}}</el-breadcrumb-item>
@@ -41,7 +41,6 @@ export default {
         })
     },
     mounted() {
-        console.log(this.tags);
     }
 
 }
@@ -56,10 +55,24 @@ export default {
     justify-content: space-between;
     align-items: center;
 
-    .text {
-        color: #fff;
-        font-size: 14px;
-        margin-left: 10px;
+    .l-content{
+        display: flex;
+        align-items: center;
+        
+        /deep/ .el-breadcrumb__item{
+                .el-breadcrumb__inner{
+                    font-weight: normal;
+                    &.is-link {
+                        color: #666 ;
+                    }
+                }
+                &:last-child {
+                    .el-breadcrumb__inner {
+                        color: #fff;
+                    }
+                }
+            }
+
     }
 
     .r-content {

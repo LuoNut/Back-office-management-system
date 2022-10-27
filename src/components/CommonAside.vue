@@ -43,11 +43,11 @@ export default {
                     url: "MallManage/MallManage",
                 },
                 {
-                    path: "user",
+                    path: "/user",
                     name: "user",
                     label: "用户管理",
                     icon: "user",
-                    url: "userManage/userManage",
+                    url: "UserManage/UserManage",
                 },
                 {
                     label: "其他",
@@ -62,13 +62,13 @@ export default {
                         },
                         {
                             path: "/page2",
-                            naem: "page2",
+                            name: "page2",
                             label: "页面2",
                             icon: "setting",
                             url: "Other/PageTwo",
                         }
                     ]
-                }
+                }       
             ]
         };
     },
@@ -82,7 +82,7 @@ export default {
 
         //点击菜单
         clickMenu(item) {
-            if (this.$route.path !== item.path && !(this.$route.path === '/home' && item.path === '/' )) {
+            if (this.$route.path !== item.path && !(this.$route.path === 'home' && item.path === '/' )) {
                 this.$router.push(item.path)
 
                 //面包屑
@@ -104,6 +104,7 @@ export default {
 
     },
     mounted() {
+        console.log(this.haschildren);
     }
 }
 </script>
