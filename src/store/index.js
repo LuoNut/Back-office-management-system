@@ -4,9 +4,9 @@ import tab from './tab'
 
 Vue.use(Vuex)
 
-//创建Vuex的实例
+// 创建Vuex的实例
 export default new Vuex.Store({
-    modules:{
-        tab
-    }
+  modules: {
+    tab,
+  },
 })
